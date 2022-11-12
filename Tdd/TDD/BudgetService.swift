@@ -14,75 +14,67 @@ class BudgetService {
         budgetRepo = repo
     }
 
-    func getEndPeriodInMonthRatio(endDate: String, yearMonth: String) -> Double {
+    func getEndPeriodInMonthRatio(endDate: String) -> Double {
 
-        let endDateCompnent = endDate.toDate(with: "yyyyMMdd")?.get(.day, .month, .year)
-        guard let end = endDateCompnent?.day else {
+        guard let endDate = endDate.toDate(with: "yyyyMMdd") else {
             return 0
         }
-
-        ///這個月有幾天
-        guard let currentMonthDay = yearMonth.toDate(with: "yyyyMM")?.getDaysInMonth() else {
+        guard let end = endDate.get(.day, .month, .year).day else {
             return 0
         }
-        
-        return Double(end) / Double(currentMonthDay)
+        return Double(end) / Double( endDate.getDaysInMonth())
     }
     
-    func getStartPeriodInMonthRatio(startDate: String, yearMonth: String) -> Double {
+    func getStartPeriodInMonthRatio(startDate: String) -> Double {
 
-        let startDateCompnent = startDate.toDate(with: "yyyyMMdd")?.get(.day, .month, .year)
-
-        guard let start = startDateCompnent?.day else {
+        guard let startDate = startDate.toDate(with: "yyyyMMdd") else {
             return 0
         }
 
-        ///這個月有幾天
-        guard let currentMonthDay = yearMonth.toDate(with: "yyyyMM")?.getDaysInMonth() else {
+        guard let start = startDate.get(.day, .month, .year).day else {
             return 0
         }
+        let currentMonthDay = startDate.getDaysInMonth()
         return Double(currentMonthDay - start + 1 ) / Double(currentMonthDay)
     }
 
     
     func getSameYearMonthPeriodInMonthRatio(startDate: String, endDate: String, yearMonth: String) -> Double {
 
-        let startDateCompnent = startDate.toDate(with: "yyyyMMdd")?.get(.day, .month, .year)
-        let endDateCompnent = endDate.toDate(with: "yyyyMMdd")?.get(.day, .month, .year)
+        guard let startDate = startDate.toDate(with: "yyyyMMdd") else {
+            return 0
+        }
+        guard let endDate = endDate.toDate(with: "yyyyMMdd") else {
+            return 0
+        }
+        guard let start = startDate.get(.day, .month, .year).day else {
+            return 0
+        }
+        guard let end = endDate.get(.day, .month, .year).day  else {
+            return 0
+        }
 
-        guard let start = startDateCompnent?.day else {
-            return 0
-        }
-        
-        guard let end = endDateCompnent?.day else {
-            return 0
-        }
-
-        ///這個月有幾天
-        guard let currentMonthDay = yearMonth.toDate(with: "yyyyMM")?.getDaysInMonth() else {
-            return 0
-        }
-        return Double(end - start + 1 ) / Double(currentMonthDay)
+        return Double(end - start + 1 ) / Double(startDate.getDaysInMonth())
     }
 
     func getBudget(startDate _startDate: String, endDate _endDate: String) -> Double {
+        guard let startDateOfYearMonth = _startDate.toDate(from: "yyyyMMdd", to: "yyyyMM"),
+              let endDateOfYearMonth = _endDate.toDate(from: "yyyyMMdd", to: "yyyyMM") else {
+            return 0
+        }
         let budgets = budgetRepo?.getAll().filter {
-            let startDate = _startDate.toDate(with: "yyyyMMdd")?.date2String(dateFormat: "yyyyMM") ?? "0"
-            let endDate = _endDate.toDate(with: "yyyyMMdd")?.date2String(dateFormat: "yyyyMM") ?? "0"
-            return $0.date.asInt() >= startDate.asInt() && $0.date.asInt() <= endDate.asInt()
+            $0.date.asInt() >= startDateOfYearMonth.asInt() && $0.date.asInt() <= endDateOfYearMonth.asInt()
         } ?? []
         var totalBudget: Double = 0.0
         budgets.forEach {
-            let yyyyMMddOfStartDate = _startDate.toDate(with: "yyyyMMdd")?.date2String(dateFormat: "yyyyMM")
-            let yyyyMMddOfEndDate = _endDate.toDate(with: "yyyyMMdd")?.date2String(dateFormat: "yyyyMM")
-            if yyyyMMddOfStartDate == yyyyMMddOfEndDate {
+            if startDateOfYearMonth == endDateOfYearMonth {
                 totalBudget += Double($0.budget) * getSameYearMonthPeriodInMonthRatio(startDate: _startDate,endDate: _endDate, yearMonth: $0.date)
             }
-            else if _startDate.toDate(with: "yyyyMMdd")?.date2String(dateFormat: "yyyyMM") == $0.date {
-                totalBudget += Double($0.budget) * getStartPeriodInMonthRatio(startDate: _startDate, yearMonth: $0.date)
+            else if startDateOfYearMonth == $0.date {
+                totalBudget += Double($0.budget) * getStartPeriodInMonthRatio(startDate: _startDate)
             }
-            else if _endDate.toDate(with: "yyyyMMdd")?.date2String(dateFormat: "yyyyMM") == $0.date {
-                totalBudget += Double($0.budget) * getEndPeriodInMonthRatio(endDate: _endDate, yearMonth: $0.date)
+            else if endDateOfYearMonth == $0.date {
+                totalBudget += Double($0.budget) * getEndPeriodInMonthRatio(endDate: _endDate)
             } else {
                 totalBudget += Double($0.budget)
             }
