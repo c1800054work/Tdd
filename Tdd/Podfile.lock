@@ -1,0 +1,16 @@
+PODS:
+  - Mockit (1.5.0)
+
+DEPENDENCIES:
+  - Mockit (= 1.5.0)
+
+SPEC REPOS:
+  trunk:
+    - Mockit
+
+SPEC CHECKSUMS:
+  Mockit: 09492d654a2945096603d76ea77b131bdcfb2233
+
+PODFILE CHECKSUM: f64422fbe919bb4db07f6c8efe294b5e106a0709
+
+COCOAPODS: 1.11.3
