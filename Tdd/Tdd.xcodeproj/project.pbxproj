@@ -16,10 +16,6 @@
 		6773181A291B306B000CE4EA /* TDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67731819291B306B000CE4EA /* TDDTests.swift */; };
 		67731824291B306B000CE4EA /* TDDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67731823291B306B000CE4EA /* TDDUITests.swift */; };
 		67731826291B306B000CE4EA /* TDDUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67731825291B306B000CE4EA /* TDDUITestsLaunchTests.swift */; };
-		67731834291B317E000CE4EA /* Mockingbird in Frameworks */ = {isa = PBXBuildFile; productRef = 67731833291B317E000CE4EA /* Mockingbird */; };
-		67731837291B31FE000CE4EA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 67731836291B31FE000CE4EA /* RxCocoa */; };
-		67731839291B31FE000CE4EA /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 67731838291B31FE000CE4EA /* RxRelay */; };
-		6773183B291B31FE000CE4EA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6773183A291B31FE000CE4EA /* RxSwift */; };
 		BAA164CF59A8C87BA9CB5394 /* Pods_TDD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C2FD44B117B391D6C6B88F /* Pods_TDD.framework */; };
 		D9249D8501C93267A1C57D57 /* Pods_TDDTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18368F31047E4544E2B6E235 /* Pods_TDDTests.framework */; };
 		F9B289CD86198DC356901959 /* Pods_TDD_TDDUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16902AC1F1EE2D65EF07640C /* Pods_TDD_TDDUITests.framework */; };
@@ -72,10 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67731839291B31FE000CE4EA /* RxRelay in Frameworks */,
-				67731837291B31FE000CE4EA /* RxCocoa in Frameworks */,
-				6773183B291B31FE000CE4EA /* RxSwift in Frameworks */,
-				67731834291B317E000CE4EA /* Mockingbird in Frameworks */,
 				BAA164CF59A8C87BA9CB5394 /* Pods_TDD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,7 +101,6 @@
 				3A797B2C04046943D0B0FBD3 /* Pods-TDDTests.debug.xcconfig */,
 				B33F22993B66B7CB3AFC9CE6 /* Pods-TDDTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -195,10 +186,6 @@
 			);
 			name = TDD;
 			packageProductDependencies = (
-				67731833291B317E000CE4EA /* Mockingbird */,
-				67731836291B31FE000CE4EA /* RxCocoa */,
-				67731838291B31FE000CE4EA /* RxRelay */,
-				6773183A291B31FE000CE4EA /* RxSwift */,
 			);
 			productName = TDD;
 			productReference = 677317FF291B306A000CE4EA /* TDD.app */;
@@ -276,8 +263,6 @@
 			);
 			mainGroup = 677317F6291B306A000CE4EA;
 			packageReferences = (
-				67731832291B317E000CE4EA /* XCRemoteSwiftPackageReference "mockingbird.git" */,
-				67731835291B31FE000CE4EA /* XCRemoteSwiftPackageReference "RxSwift.git" */,
 			);
 			productRefGroup = 67731800291B306A000CE4EA /* Products */;
 			projectDirPath = "";
@@ -769,48 +754,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		67731832291B317E000CE4EA /* XCRemoteSwiftPackageReference "mockingbird.git" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/birdrides/mockingbird.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.0;
-			};
-		};
-		67731835291B31FE000CE4EA /* XCRemoteSwiftPackageReference "RxSwift.git" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		67731833291B317E000CE4EA /* Mockingbird */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 67731832291B317E000CE4EA /* XCRemoteSwiftPackageReference "mockingbird.git" */;
-			productName = Mockingbird;
-		};
-		67731836291B31FE000CE4EA /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 67731835291B31FE000CE4EA /* XCRemoteSwiftPackageReference "RxSwift.git" */;
-			productName = RxCocoa;
-		};
-		67731838291B31FE000CE4EA /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 67731835291B31FE000CE4EA /* XCRemoteSwiftPackageReference "RxSwift.git" */;
-			productName = RxRelay;
-		};
-		6773183A291B31FE000CE4EA /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 67731835291B31FE000CE4EA /* XCRemoteSwiftPackageReference "RxSwift.git" */;
-			productName = RxSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 677317F7291B306A000CE4EA /* Project object */;
 }
