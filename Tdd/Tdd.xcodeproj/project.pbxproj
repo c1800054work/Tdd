@@ -25,6 +25,7 @@
 		67731824291B306B000CE4EA /* TDDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67731823291B306B000CE4EA /* TDDUITests.swift */; };
 		67731826291B306B000CE4EA /* TDDUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67731825291B306B000CE4EA /* TDDUITestsLaunchTests.swift */; };
 		6776833F291F3D1B00753C8F /* TennisTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611842AAA5E63D9702126497 /* TennisTest.swift */; };
+		9BA9D45A291FA0110083306F /* IBudgetReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9D459291FA0110083306F /* IBudgetReport.swift */; };
 		BAA164CF59A8C87BA9CB5394 /* Pods_TDD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C2FD44B117B391D6C6B88F /* Pods_TDD.framework */; };
 		D9249D8501C93267A1C57D57 /* Pods_TDDTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18368F31047E4544E2B6E235 /* Pods_TDDTests.framework */; };
 		F9B289CD86198DC356901959 /* Pods_TDD_TDDUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16902AC1F1EE2D65EF07640C /* Pods_TDD_TDDUITests.framework */; };
@@ -76,6 +77,7 @@
 		79FDEC57F46237F60ABD8E5D /* Pods-TDD-TDDUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDD-TDDUITests.debug.xcconfig"; path = "Target Support Files/Pods-TDD-TDDUITests/Pods-TDD-TDDUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7D49CC7F083D0E03DF1CBA24 /* Pods-TDD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDD.debug.xcconfig"; path = "Target Support Files/Pods-TDD/Pods-TDD.debug.xcconfig"; sourceTree = "<group>"; };
 		85C2FD44B117B391D6C6B88F /* Pods_TDD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BA9D459291FA0110083306F /* IBudgetReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBudgetReport.swift; sourceTree = "<group>"; };
 		B181C3B853E1B0FB9C0FA316 /* Pods-TDD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDD.release.xcconfig"; path = "Target Support Files/Pods-TDD/Pods-TDD.release.xcconfig"; sourceTree = "<group>"; };
 		B33F22993B66B7CB3AFC9CE6 /* Pods-TDDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDDTests.release.xcconfig"; path = "Target Support Files/Pods-TDDTests/Pods-TDDTests.release.xcconfig"; sourceTree = "<group>"; };
 		DDAD4DD8D95250FD548235A2 /* Pods-TDD-TDDUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDD-TDDUITests.release.xcconfig"; path = "Target Support Files/Pods-TDD-TDDUITests/Pods-TDD-TDDUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				61184566FA3D8CBE0B12D951 /* Collection.swift */,
 				61184C2A2D89E0F4FA0181D0 /* String+.swift */,
 				611840F88B9C51CD8ADB5269 /* Date+.swift */,
+				9BA9D459291FA0110083306F /* IBudgetReport.swift */,
 				61184CA9B3BB57521AEAF172 /* BudgetService.swift */,
 			);
 			path = TDD;
@@ -443,6 +446,7 @@
 				6118416074DC0255B764D8AE /* Tennis.swift in Sources */,
 				611843A95C23A463A6FE48AC /* TennisPlayer.swift in Sources */,
 				61184EEC9A487B7C4DBC0C20 /* Score.swift in Sources */,
+				9BA9D45A291FA0110083306F /* IBudgetReport.swift in Sources */,
 				61184383246CFEA62C0D0DF4 /* Collection.swift in Sources */,
 				611842567707E7AB94BBAEE8 /* String+.swift in Sources */,
 				611847BB099DEDD62E6D3788 /* Date+.swift in Sources */,
