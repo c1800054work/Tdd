@@ -7,7 +7,11 @@ import Foundation
 struct Budget {
     ///YYYYMM
     var date: String
-    var budget: Int
+    var amt: Int
+
+    func getDate() -> Date? {
+        date.toDate(with: "yyyyMM")
+    }
 }
 
 struct IBudgetReport {
